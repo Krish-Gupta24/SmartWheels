@@ -1,29 +1,31 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    experimental: {
-        serverComponentsHmrCache:false
-    },
+  experimental: {
+    serverComponentsHmrCache: false,
+  },
 
-    images: {
-        remotePatterns: [
-            {
-                protocol: "https",
-                hostname:"kbytsldjvzsfpmczeeba.supabase.co"
-            }
-        ]
-    },
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "hlpvhhcipawbrrvtuiij.supabase.co",
+      },
+    ],
+  },
 
-    async headers() {
-        return [{
-            source: "/embed",
-            headers: [
-                {
-                    key: "Content-Security-policy",
-                    value:"frame-src 'self' https://smartwheels-waitlist.created.app;"
-                }
-            ]
-        }]
-    }
+  async headers() {
+    return [
+      {
+        source: "/embed",
+        headers: [
+          {
+            key: "Content-Security-policy",
+            value: "frame-src 'self' https://smartwheels-waitlist.created.app;",
+          },
+        ],
+      },
+    ];
+  },
 };
 
 export default nextConfig;
